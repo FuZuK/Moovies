@@ -10,6 +10,8 @@ if (isset($_POST['name']) && isset($_POST['year']) && isset($_POST['format']) &&
 
 	if (!is_numeric($year) || mb_strlen($year) != 4)
 		$err[] = 'Введите верный год выпуска';
+    elseif ($year > date('Y'))
+        $err[] = 'Этот фильм из будущего? :)';
 
 	if (empty($config['formats'][$format]))
 		$err[] = 'Выберите доступный формат из списка';
@@ -77,7 +79,8 @@ require_once HEAD;
 </div>
 <script>
     $('#year').datetimepicker({
-        format: 'YYYY'
+        format: 'YYYY', 
+        maxDate: new Date(), 
     });
 </script>
 <?php
