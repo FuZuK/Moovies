@@ -13,7 +13,7 @@
 -- Дамп структуры для таблица moovies.actors
 CREATE TABLE IF NOT EXISTS `actors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `actors` (
 -- Дамп структуры для таблица moovies.films
 CREATE TABLE IF NOT EXISTS `films` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `year` int(11) NOT NULL,
   `format` int(11) NOT NULL,
   PRIMARY KEY (`id`)
